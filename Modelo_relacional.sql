@@ -225,8 +225,8 @@ CREATE TABLE LOS_SELECTOS.Bicicleta_Alquiler (
     Modelo_Bicicleta_Id NUMERIC(18),
     Local_Id NUMERIC(18),
     Estado_Bici_Alquiler_Id NUMERIC(18),
-    Bicicleta_Alquiler_Precio_Hora VARCHAR(255),
-    Bicicleta_Alquiler_Precio_Dia VARCHAR(255),
+    Bicicleta_Alquiler_Precio_Hora NUMERIC(38,2),
+    Bicicleta_Alquiler_Precio_Dia NUMERIC(38,2),
 
     FOREIGN KEY (Modelo_Bicicleta_Id)
         REFERENCES LOS_SELECTOS.Modelo_Bicicleta(Modelo_Bicicleta_Id),
@@ -248,7 +248,7 @@ CREATE TABLE LOS_SELECTOS.Alquiler (
     Local_Id NUMERIC(18),
     Bicicleta_Alquiler_Nro_Serie VARCHAR(255),
     Estado_Alquiler_Id NUMERIC(18),
-    Forma_Pago_Id NUMERIC(18)
+    Forma_Pago_Id NUMERIC(18),
 
     FOREIGN KEY (Cliente_Id)
         REFERENCES LOS_SELECTOS.Cliente(Cliente_Id),
@@ -300,7 +300,7 @@ CREATE TABLE LOS_SELECTOS.Detalle_Compra (
     Producto_Cod VARCHAR(255),
     Detalle_Compra_Cantidad INT,
     Detalle_Compra_Precio_Unitario NUMERIC(38,2),
-    Detalle_Compra_Subtotal NUMERIC(38,2)
+    Detalle_Compra_Subtotal NUMERIC(38,2),
 
     FOREIGN KEY (Compra_Nro)
         REFERENCES LOS_SELECTOS.Compra(Compra_Nro),
@@ -348,7 +348,7 @@ CREATE TABLE LOS_SELECTOS.Detalle_Reparacion (
     Repuesto_Cod VARCHAR(255),
     Detalle_Reparacion_Cantidad INT,
     Detalle_Reparacion_Precio_Unitorio NUMERIC(38,2),
-    Detalle_Reparacion_Subtotal NUMERIC(38,2)
+    Detalle_Reparacion_Subtotal NUMERIC(38,2),
 
     FOREIGN KEY (Reparacion_Nro)
         REFERENCES LOS_SELECTOS.Reparacion(Reparacion_Nro),
